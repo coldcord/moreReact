@@ -4,7 +4,7 @@ This plugin allows you to modify the max number of reactions for the frencency r
 
 ![preview](https://i.imgur.com/WSICXUZ.png)
 
-<!--><-->
+<!-->
 
 ## Install
 
