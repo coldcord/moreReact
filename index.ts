@@ -39,7 +39,7 @@ export default definePlugin({
     ],
     patches: [
         {
-            find: ".MESSAGE_HOVER_BAR_REACTION_SUGGESTION_ADD_ALLY",
+            find: "location:\"useMessageUtilitiesProps\"",
             replacement: {
                 match: /(\.length>=3?.{0,40}\.slice\(0),3\)/,
                 replace: "$1,$self.settings.store.Max)"
