@@ -39,7 +39,7 @@ export default definePlugin({
     ],
     patches: [
         {
-            find: "location:\"useMessageUtilitiesProps\"",
+            find: "location:\"message_utilities\"",
             replacement: {
                 match: /(\.length>=3?.{0,40}\.slice\(0),3\)/,
                 replace: "$1,$self.settings.store.Max)"
