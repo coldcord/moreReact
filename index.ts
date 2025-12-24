@@ -17,11 +17,12 @@
 */
 
 import { definePluginSettings } from "@api/Settings";
+import { Devs } from "@utils/constants";
 import definePlugin, { OptionType } from "@utils/types";
 
 const settings = definePluginSettings({
     Max: {
-        description: "Max reactions",
+        description: "Max reactions (42 is the limit)",
         type: OptionType.NUMBER,
         default: 5,
     },
@@ -29,19 +30,14 @@ const settings = definePluginSettings({
 
 export default definePlugin({
     name: "MoreReact",
-    description: "This plugin allows you to modify the max number of reactions for the frencency reaction experiment",
+    description: "This plugin allows you to modify the max number of reactions for the frencency reaction menu",
     tags: ["Frencency", "Reactions"],
-    authors: [
-        {
-            name: "i am me",
-            id: 984392761929256980n
-        }
-    ],
+    authors: [Devs.iamme],
     patches: [
         {
             find: "location:\"message_utilities\"",
             replacement: {
-                match: /(\.length>=3?.{0,40}\.slice\(0),3\)/,
+                match: /(length>=3?.{0,40}\.slice\(0),3\)/,
                 replace: "$1,$self.settings.store.Max)"
             }
         }
